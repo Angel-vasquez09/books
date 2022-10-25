@@ -1,0 +1,34 @@
+<div class="container h-auto min-vh-100 d-flex flex-column justify-content-center align-items-center">
+  <h1 class="display-6 mt-5 mb-3">Crear nuevo libro</h1>
+  <form class=" pt-2 pb-5" [formGroup]="formLibro" (ngSubmit)="submitLibro()" autocomplete="off">
+    <div class="mb-3">
+      <label for="" [class.error-text]="campoValido('sku')" class="form-label">SKU(*)</label>
+      <input [class.error-border]="campoValido('sku')" formControlName="sku" name="sku" type="text" class="form-control">
+      <small *ngIf="campoValido('sku')" class="form-text error-text">El sku es obligatorio</small>
+    </div>
+    <div class="mb-3">
+      <label for="" [class.error-text]="campoValido('title')" class="form-label">TÍTULO(*)</label>
+      <input  [class.error-border]="campoValido('title')" formControlName="title" name="title" type="text" class="form-control" aria-describedby="emailHelp">
+      <div *ngIf="campoValido('title')" class="form-text error-text">El titulo es obligatorio</div>
+    </div>
+    <div class="mb-3">
+      <label for="" [class.error-text]="campoValido('author')" class="form-label">AUTOR(*)</label>
+      <input formControlName="author" [class.error-border]="campoValido('author')" name="author" type="text" class="form-control" aria-describedby="emailHelp">
+      <div *ngIf="campoValido('author')" class="form-text error-text">El autor es obligatorio</div>
+    </div>
+    <div class="mb-3">
+      <label for="" [class.error-text]="campoValido('description')" class="form-label">DESCRIPCIÓN(*)</label>
+      <input formControlName="description" [class.error-border]="campoValido('description')" name="description" type="text" class="form-control">
+      <div *ngIf="campoValido('description')" class="form-text error-text">La descripción es obligatorio</div>
+    </div>
+    <div class="mb-3">
+      <label for="" [class.error-text]="campoValido('comments')" class="form-label">COMENTARIOS(*)</label>
+      <input formControlName="comments" [class.error-border]="campoValido('comments')" name="comments" type="text" class="form-control">
+      <div *ngIf="campoValido('comments')" class="form-text error-text">El comentario es obligatorio</div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <button type="button" routerLink="/" class="btn btn-danger">Cancelar</button>
+    </div>
+  </form>
+</div>

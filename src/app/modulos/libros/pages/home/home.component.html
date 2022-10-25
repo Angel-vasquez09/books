@@ -1,0 +1,30 @@
+
+<div class="container my-5">
+  <div class="d-flex justify-content-between relative mb-4">
+    <h1 class="display-6 mb-3 me-4">Listado de libros</h1>
+    <button  type="button" routerLink="nuevo-libro" class="btn btn-outline-secondary">Crear nuevo libro</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SKU</th>
+        <th scope="col">TÍTULO</th>
+        <th scope="col">AUTOR</th>
+        <th scope="col">DESCRIPCIÓN</th>
+        <th scope="col">FECHA DE CREACIÓN</th>
+        <th scope="col">FECHA DE MODIFICACIÓN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let libro of libros">
+        <td>{{ libro.sku }}</td>
+        <td>{{ libro.title }}</td>
+        <td>{{ libro.author }}</td>
+        <td>{{ libro.description }}</td>
+        <td>{{ libro.created }}</td>
+        <td>{{ libro.modified }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
